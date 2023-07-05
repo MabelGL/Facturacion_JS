@@ -20,7 +20,7 @@
 			{
 			  sumaTotal = sumaTotal + ((precio * cantidad) - descuento);
 			  document.getElementById("totalgeneralfactura").innerHTML = sumaTotal.toLocaleString('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2});
-        document.getElementById("totaliva").innerHTML = (sumaTotal*0.13).toLocaleString('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2});
+        document.getElementById("totaliva").innerHTML = (sumaTotal*0.19).toLocaleString('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2});
         document.getElementById("totalgeneralfacturaCobrar").innerHTML = (sumaTotal + (sumaTotal*0.13)).toLocaleString('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2});
 
         
@@ -33,12 +33,12 @@
 			
 			this.devolverPrecio = function()
 			{
-			  if (nombre == "CamaraMinolta") precio = 350;
-			  else if (nombre == "CamaraCanon") precio = 520;
-			  else if (nombre == "HP550") precio = 730;
-			  else if (nombre == "VAIO510T") precio = 12.40;
-			  else if (nombre == "NokiaN95") precio = 650;
-			  else if (nombre == "SamsungI900") precio = 960;
+			  if (nombre == "Tomate") precio = 350;
+			  else if (nombre == "Papa") precio = 520;
+			  else if (nombre == "Papaya") precio = 730;
+			  else if (nombre == "Ajo") precio = 20;
+			  else if (nombre == "Cebolla") precio = 650;
+			  else if (nombre == "Brocoli") precio = 960;
 			  else precio = 0;
 			  
 			  document.getElementById("Precio").innerHTML = precio;
@@ -57,11 +57,11 @@
         document.getElementById("total").innerHTML += total.toLocaleString('en-IN', {style: 'currency',currency: 'USD', minimumFractionDigits: 2}) + salto;
         
         if (total >= 1000 && total <=2000){
-          descuento = total * 0.10;
+          descuento = total * 0.15;
         }else if (total >= 2000 && total <=4000){
-          descuento = total * 0.20;
+          descuento = total * 0.25;
         }else if (total >= 4000 && total <=7000){
-          descuento =total *  0.30;
+          descuento =total *  0.35;
         }else{
           descuento = 0.0;
         }
@@ -125,7 +125,7 @@
       <td colspan="10" class="centrados"><table width="270" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
           <td width="48"><img src="img/shoppingcart_full.png" width="48" height="48" alt="Productos" /></td>
-          <td width="222" class="titulo">Facturación de Productos</td>
+          <td width="222" class="titulo">Mi tiendita</td>
         </tr>
         <tr>
           <td>&nbsp;</td>
@@ -139,13 +139,13 @@
       <td colspan="10"></td>      
     </tr>
     <tr>      
-      <td colspan="10">Monto Mayor a $1,000.00 y menor de $2,000.00 un descuento del 10%</td>      
+      <td colspan="10">Monto Mayor a $1,000.00 y menor de $2,000.00 un descuento del 15%</td>      
     </tr>
     <tr>
-      <td colspan="10">Monto Mayor a $2,000.00 y menor de $4,000.00 un descuento del 20%</td>
+      <td colspan="10">Monto Mayor a $2,000.00 y menor de $4,000.00 un descuento del 25%</td>
     </tr>
     <tr>
-      <td colspan="10">Monto Mayor a $4,000.00 y menor de $7,000.00 un descuento del 30%</td>
+      <td colspan="10">Monto Mayor a $4,000.00 y menor de $7,000.00 un descuento del 35%</td>
     </tr>   
     <tr>
           <td>&nbsp;</td>
@@ -166,12 +166,12 @@
     <tr>
       <td colspan="2" class="titulo2"><select name="idProduct" class="controles" id="idProduct" onchange="verPrecio()";>
         <option selected="selected">---</option>
-        <option value="CamaraMinolta">Camara Minolta</option>
-        <option value="CamaraCanon">Canon 500D</option>
-        <option value="HP550">HP 550</option>
-        <option value="NokiaN95">Nokia N95</option>
-        <option value="SamsungI900">Samsung Omnia I900</option>
-        <option value="VAIO510T">VAIO VGN-P510T</option>
+        <option value="Papa">Papa</option>
+        <option value="Papaya">Papaya</option>
+        <option value="Tomate">Tomate</option>
+        <option value="Brocoli">Brocoli</option>
+        <option value="Ajo">Ajo</option>
+        <option value="Cebolla">Cebolla</option>
       </select></td>
       <td>&nbsp;</td>
       <td colspan="2" id="Precio" class="titulo2">&nbsp;</td>
